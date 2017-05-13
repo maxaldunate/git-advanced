@@ -68,9 +68,8 @@ $ git qm master
 $ git log
 $ git log --pretty=oneline
 $ git log --pretty=%h | %d %s (%cr) [%an]
+```
 
 
 
-
-
-END
+Max Aldunate
