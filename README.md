@@ -3,28 +3,31 @@ Advanced Git Tips and Trciks
 by Enrico Campidoglio
 Pluralsight
 
-##Add-ons
+## Add-ons
 for win
-posh-git
+### posh-git
 for unix
-git-completion.bash
+### git-completion.bash
+```bash
 $ wget https://github.com/git/git/blob/master/contrib/completion/git-completion.bash --quiet --show-progress -O ~/git-completion.bash
 $ echo -e "\nsource ~/git-completion.bash" >> ~/bash_profile
+```
 
-Better for zsh (z shell)
+### Better for zsh (z shell)
 first isntall zsh
 https://gist.github.com/derhuerst/12a1558a4b408b3b2b6e
 
-oh-my-zsh
+### oh-my-zsh
 $ wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh --quiet --show-progress -O ~/install.sh
 
-###Git Alias
+## Git Alias
+```bash
 $ git config alias.st status
 $ git config --list
-
 $ cat .git/config | grep -A 1 "\[alias\]"
+```
 
-### Git Configs
+## Git Configs
 --> Config per: Repo()current, User(--global) or System(--system)
 https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
 --system  /etc/gitconfig
@@ -36,6 +39,7 @@ $ git config --system --unset
 * Short status
 $ git config --global alias.st "status --short --branch"
 * Quick merge
+$ git checkout -b new_branch_name
 $ git config --global alias.qm "!git checkout $1; git merge @{-1}"
 $ git config --global alias.qm
 
