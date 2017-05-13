@@ -67,9 +67,12 @@ $ git qm master
 ```bash
 $ git log
 $ git log --pretty=oneline
-git log --pretty='%h | %d %s (%cr) [%an]'
-git log --pretty='%Cred%h%Creset | $C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset'
-git log --pretty='%Cred%h%Creset | $C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph
+$ git log --pretty='%h | %d %s (%cr) [%an]'
+$ git log --pretty='%Cred%h%Creset | $C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset'
+$ git log --pretty='%Cred%h%Creset | $C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph
+
+$ git config --global alias.lg "log --pretty='%Cred%h%Creset | $C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph"
+
 ```
 
 
