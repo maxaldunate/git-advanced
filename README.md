@@ -1,41 +1,36 @@
 # Advanced Git Tips and Tricks
-Git-advanced   
 by Enrico Campidoglio  
 at Pluralsight
 
 ## Introduction
 
-*Add-ons*
-
-for win
-### posh-git
-for unix
-### git-completion.bash
+*Add-ons*  
+for win  
+**posh-git**  
+for unix  
+**git-completion.bash**
 ```bash
 $ wget https://github.com/git/git/blob/master/contrib/completion/git-completion.bash --quiet --show-progress -O ~/git-completion.bash
 $ echo -e "\nsource ~/git-completion.bash" >> ~/bash_profile
 ```
 
-### Better for zsh (z shell)
-first isntall zsh
+**Better for zsh (z shell)**  
+first isntall zsh  
 https://gist.github.com/derhuerst/12a1558a4b408b3b2b6e
 
-### oh-my-zsh
-```bash
-$ wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh --quiet --show-progress -O ~/install.sh
-```
+**oh-my-zsh**  
+`$ wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh --quiet --show-progress -O ~/install.sh`
 
 ## The Command Line
 
-### Git Alias
+**Git Alias**  
 ```bash
 $ git config alias.st status
 $ git config --list
 $ cat .git/config | grep -A 1 "\[alias\]"
 ```
 
-### Git Configs
-
+**Git Configs**  
 --> Config per: 
 https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
 
@@ -45,30 +40,30 @@ https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
 
 `$ git config --system --unset`
 
-**Short status**
+**Short status**  
 `$ git config --global alias.st "status --short --branch"`
 
-**Quick merge**
+**Quick merge**  
 ```bash
 $ git checkout -b new_branch_name
 $ git config --global alias.qm "!git checkout $1; git merge @{-1}"
 $ git config --global alias.qm
 ```
 
-* To push a branch
+* To push a branch  
 `$ git push origin +testinggit`
 
-* Status
+* Status  
 `alias.st=status --short --branch`
 
-* Commit All
+* Commit All  
 ```bash
 alias.cma=commit --all -m
 alias.qm=git st checkout ; git merge @{-1}
 $ git qm master
 ```
 
-### Git Log
+**Git Log**  
 ```bash
 $ git log
 $ git log --pretty=oneline
@@ -80,7 +75,7 @@ $ git config --global alias.lg "log --pretty='%Cred%h%Creset | $C(yellow)%d%Cres
 
 ```
 
-### Diffs
+**Diffs**  
 Diferencias en los ficheros
 
 ```bash
@@ -92,14 +87,13 @@ $ git diff --histogram         //Maybe for source code
 $ git config --global diff.algorithm histogram 
 ```
 
-### Diffs in Commits
-
+**Diffs in Commits**
 ```bash
 $ git show HEAD
 $ git show HEAD~2
 ```
 
-* so = show-object 
+* so = show-object  
 
 `$ git config --global alias.so "show HEAD --pretty='parent %Credp%Creset commit %Cred%h%Creset%C(yellow)%d%Creset%n%n%w(72,2,2)%s%n%n%w(72,0,0)%C(cyan)%an%Creset %Cgreen%ar%Creset'"`
 
@@ -108,22 +102,18 @@ $ git so
 $ git so HEAD~2
 ```
 
-* Just commit metadata
-
-`$ git so HEAD --no-patch`
-
-* Just summary changes
-
+* Just commit metadata  
+`$ git so HEAD --no-patch`  
+* Just summary changes  
 `$ git so HEAD --stat`
 
-**The Snapshot contains**
+**The Snapshot contains**  
 * Tree
 * Blob
 
 Git records **entire files** in the working directory for each commit
 
-### Plumbing
-
+**Plumbing**  
 ```bash
 $ git cat-file -p HEAD  //same info than show command but with no patch
 
@@ -144,13 +134,11 @@ $ git cat-file -p d825d //The blob object containing the entire file (not a diff
 
 ```
 
-*IMPORTANT*
-
+*IMPORTANT*  
 There is a **tree object** for every **sub directory** and
 a **blob object** for every **file**.
 
-### Delta changes
-
+**Delta changes**  
 * Diferenies between commits to save disk space
 ```bash
 $ git diff HEAD~4..HEAD
@@ -158,10 +146,8 @@ $ git diff HEAD~4..HEAD --stat
 $ git diff HEAD..HEAD~4 --stat  //Reverse comparision
 ```
 
-* Comparing 2 files from differents commits
-```bash
-$ git diff HEAD~3:README.md..HEAD:README.md
-```
+* Comparing 2 files from differents commits  
+`$ git diff HEAD~3:README.md..HEAD:README.md`
 
 ## Crafting Commits
 
