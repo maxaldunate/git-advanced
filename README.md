@@ -1,5 +1,7 @@
 # Advanced Git Tips and Tricks
-Git-advanced by Enrico Campidoglio at Pluralsight
+Git-advanced   
+by Enrico Campidoglio  
+at Pluralsight
 
 ## Introduction
 
@@ -98,6 +100,7 @@ $ git show HEAD~2
 ```
 
 * so = show-object 
+
 `$ git config --global alias.so "show HEAD --pretty='parent %Credp%Creset commit %Cred%h%Creset%C(yellow)%d%Creset%n%n%w(72,2,2)%s%n%n%w(72,0,0)%C(cyan)%an%Creset %Cgreen%ar%Creset'"`
 
 ```bash
@@ -106,12 +109,14 @@ $ git so HEAD~2
 ```
 
 * Just commit metadata
+
 `$ git so HEAD --no-patch`
 
 * Just summary changes
+
 `$ git so HEAD --stat`
 
-***The Snapshot contains**
+**The Snapshot contains**
 * Tree
 * Blob
 
@@ -140,6 +145,7 @@ $ git cat-file -p d825d //The blob object containing the entire file (not a diff
 ```
 
 *IMPORTANT*
+
 There is a **tree object** for every **sub directory** and
 a **blob object** for every **file**.
 
